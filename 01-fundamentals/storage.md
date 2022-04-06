@@ -22,4 +22,47 @@
 - Bring data into the cloud:
     - Online transfer: gsutil tool, upload and access dat from the command line
     - Storage Transfer Service: lets manage scheduled batch data imports for other cloud services, from a different region or from a HTTPS endpoint
-    - Transfer Appliance:
+    - Transfer Appliance: rackable appliance to securly ship data
+
+## Cloud Bigtable
+
+- It is a fully managed NoSQL, wide-column database service for terabyte applications
+- Bigtable databases are sparsely populated tables, which can scale to billions of rows and thousands of columns. It is ideal for data which has a single lookup key
+- Bigtable is ideal for storing large amount of data with very low latency. Supports high throughput for reads and writes as well
+- Bigtable is offered through the same open-source API as HBase
+- Bigtable offers data encryption in-flight and at rest. Access to tables can be controlled using IAMs
+
+## Cloud SQL
+
+- It is a relational database as a service
+- Offers MySQL and PostgreSQLBeta database engines as a fully managed service
+- Cloud SQL provides several replica services: read, failover and external replicas
+- Cloud SQL can replicate data between multiple zones with automatic failover
+- It provides on-demand and scheduled backups
+- It can scale vertically and horizontally (with read replicas)
+
+## Cloud Spanner
+
+- It provides SQL queries
+- Offer transactional consistency at a global scale
+- It has schemas and automatic synchronous replication for HA
+- It can provides petabytes of capacity
+
+## Cloud Datastore
+
+- It is a noSQL database, highly scalable
+- One of its main use case is store structured data from AppEngine apps
+- Cloud Datastore automatically manages sharding and replication
+- Offers transactions which can affect multiple database rows
+- It let us do SQL like queries
+
+## Comparing Storage Options
+
+|                 | Cloud Datastore | Bigtable                  | Cloud Storage | Cloud SQL                   | Cloud Spanner            | Bigquery                |
+|-----------------|-----------------|---------------------------|---------------|-----------------------------|--------------------------|-------------------------|
+| Type            | NoSQL document  | NoSQL wide column         | Blobstore     | Relational SQL for OLTP     | Relational SQL for OLAP  | Relational SQL for OLAP |
+| Transactions    | Yes             | Single-row                | No            | Yes                         | Yes                      | No                      |
+| Complex Queries | No              | No                        | No            | Yes                         | Yes                      | Yes                     |
+| Capacity        | TerraBytes+     | PetaBytes+                | PetaBytes+    | TerraBytes                  | PetaBytes                | PetaBytes+              |
+| Unit Size       | 1 MB/entity     | ~10 MB cell / ~100 MB row | 5 TB object   | Determined by the DB engine | 10_240 MB per Row        | 10 MB per Row           |
+
