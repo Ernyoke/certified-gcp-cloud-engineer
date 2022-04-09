@@ -8,3 +8,7 @@
     - [Api Management Tools](01-fundamentals/api-management.md)
     - [Development in the Cloud](01-fundamentals/development.md)
     - [Infrastructure as Code](01-fundamentals/iac.md)
+    - [Monitoring](01-fundamentals/monitoring.md)
+    - [Big Data and Machine Learning](01-fundamentals/big-data-and-ml.md)
+2. Essential Cloud Infrastructure
+    - [VPC - Virtual Private Cloud](02-essential-infrastructure/vpc.md)
