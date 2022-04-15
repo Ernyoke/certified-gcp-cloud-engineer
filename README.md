@@ -13,3 +13,4 @@
     - [Big Data and Machine Learning](01-fundamentals/big-data-and-ml.md)
 2. Essential Cloud Infrastructure
     - [VPC - Virtual Private Cloud](02-essential-infrastructure/vpc.md)
+    - [Compute Engine](02-essential-infrastructure/compute-engine.md)
