@@ -14,3 +14,5 @@
 2. Essential Cloud Infrastructure
     - [VPC - Virtual Private Cloud](02-essential-infrastructure/vpc.md)
     - [Compute Engine](02-essential-infrastructure/compute-engine.md)
+    - [Cloud IAM](02-essential-infrastructure/iam.md)
+
