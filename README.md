@@ -15,4 +15,6 @@
     - [VPC - Virtual Private Cloud](02-essential-infrastructure/vpc.md)
     - [Compute Engine](02-essential-infrastructure/compute-engine.md)
     - [Cloud IAM](02-essential-infrastructure/iam.md)
+    - [Cloud Storage](02-essential-infrastructure/cloud-storage.md)
+    - [Filestore](02-essential-infrastructure/filestore.md)
 
