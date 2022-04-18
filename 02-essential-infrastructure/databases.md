@@ -64,3 +64,27 @@
 - General guideline is:
     - Use Firestore in Datastore mode for server applications
     - Use Firestore in Native mode for mobile and web apps
+
+## Cloud Bigtable
+
+- It is a fully managed NoSQL bit data database with petabyte-scale and very low latency
+- It seamlessly sells for throughput
+- Ideal for Ad Tech, Fintech and IoT because supports high read and write throughput with low latency
+- It a great storage engine for ML applications
+- It integrates with open source big data tools such as Hadoop, Cloud Dataflow and Cloud Dataproc
+- Supports the open source HBase API
+- Cloud Bigtable stores data in massively scalable tables, each of which is sorted key-value map
+- Table are composed of rows describing a single entity and columns
+- Each row is indexed with a single row key
+- Columns which do relate to each other are grouped together in column families
+- Each column is identified by a combination of column family and column quantifier
+- Cloud Bigtable tables are sparse
+- Tables are sharded into blocks of contiguous rows, called tablets
+- Tablets are similar to HBase regions
+- Bigtables learns to adjust to certain access patterns
+
+## Cloud Memorystore
+
+- It is a fully managed Redis service used for in-memory data storage
+- It automates complex tasks such as: HA, failover, patches and monitoring
+- Can support instances up ti 300 per second
