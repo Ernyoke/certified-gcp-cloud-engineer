@@ -18,4 +18,5 @@
     - [Cloud Storage](02-essential-infrastructure/cloud-storage.md)
     - [Filestore](02-essential-infrastructure/filestore.md)
     - [Databases](02-essential-infrastructure/databases.md)
+    - [Resource Management](02-essential-infrastructure/resource-management.md)
 
