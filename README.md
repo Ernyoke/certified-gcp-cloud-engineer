@@ -19,4 +19,5 @@
     - [Filestore](02-essential-infrastructure/filestore.md)
     - [Databases](02-essential-infrastructure/databases.md)
     - [Resource Management](02-essential-infrastructure/resource-management.md)
+    - [Monitoring](02-essential-infrastructure/monitoring.md)
 
