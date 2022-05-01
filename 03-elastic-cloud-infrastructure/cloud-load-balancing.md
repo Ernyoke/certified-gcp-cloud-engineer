@@ -86,3 +86,33 @@
 - Provided features:
     - Intelligent routing: can route requests to backend locations where is capacity
     - Security patching
+
+## Network Load Balancing
+
+- It is a regional, non-proxied load balancer
+- It is using forwarding rules based on the incoming IP protocol data such as address, port and protocol traffic
+- It can be used to load balance UDP, TCP/SSL traffic
+- Architecture depends weather we use a backend service-based network load balancer or a target pool based network load balancer
+- Backend service-based architecture:
+    - Enables new feature which are not supported with legacy target pools such as:
+        - Non-legacy health checks
+        - Auto-scaling with managed instance groups
+        - Connection draining
+        - Configurable failover policy
+    - Target pool load balancer can be transitioned to backend service-based lb
+- Target pool-based architecture:
+    - A target-pool resource defines a group of instances that receive incoming traffic from forwarding rules
+    - The load balances picks an instance based on the hash of the source IP and port, and the destination of the source IP and port
+    - Target pools can only be used with forwarding rules that can handle TCP and UDP traffic
+    - Each target pool can have only 1 health check
+
+## Internal Load Balancing
+
+- It is a regional private load balancing service for TCP and UDP based traffic
+- It is only accessible with internal IP addresses within a region
+- The internal client requests are staying internal within Google's network
+- Offers reduced latency (because of the internal traffic)
+- Internal HTTP(S) load balancing:
+    - Proxy based, regional, private load balancer
+    - Layer 7 load balancer, can handle HTTP, HTTPS and HTTP/2 protocols
+    - It is based on open source Envoy proxy
