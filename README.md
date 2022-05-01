@@ -23,4 +23,5 @@
 3. Elastic Cloud Infrastructure
     - [Cloud VPN](03-elastic-cloud-infrastructure/cloud-vpn.md)
     - [Cloud Interconnect](03-elastic-cloud-infrastructure/cloud-interconnect.md)
+    - [Shared VPC and VPC Peering](03-elastic-cloud-infrastructure/vpc-peering.md)
 
