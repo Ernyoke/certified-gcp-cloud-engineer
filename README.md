@@ -20,4 +20,6 @@
     - [Databases](02-essential-infrastructure/databases.md)
     - [Resource Management](02-essential-infrastructure/resource-management.md)
     - [Monitoring](02-essential-infrastructure/monitoring.md)
+3. Elastic Cloud Infrastructure
+    - [Cloud VPN](03-elastic-cloud-infrastructure/cloud-vpn.md)
 
