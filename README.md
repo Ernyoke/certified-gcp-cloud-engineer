@@ -22,4 +22,5 @@
     - [Monitoring](02-essential-infrastructure/monitoring.md)
 3. Elastic Cloud Infrastructure
     - [Cloud VPN](03-elastic-cloud-infrastructure/cloud-vpn.md)
+    - [Cloud Interconnect](03-elastic-cloud-infrastructure/cloud-interconnect.md)
 
