@@ -50,3 +50,39 @@
         - An instance group (managed or unmanaged)
         - A balancing mode (CPU utilization or RPS - requests per second): how to determine when the backend is in full usage
         - A capacity scaler (ceiling % of CPU/Rate targets)
+- HTTPS load balancer:
+    - Uses a target HTTPS proxy
+    - Requires at least on signed SSL certificate installed on the target HTTPS proxy (target proxy can have up to 15 SSL certificates)
+    - Client SSL session terminates at the load balancer
+    - Supports the QUIC transport layer protocol
+- Backed bucket:
+    - Allow us to use storage buckets with HTTPS load balancing
+    - Common use case: send requests for dynamic data to a backend service, send requests for static data to a bucket
+- Network endpoint groups (NEG):
+    - Is a configuration object which specified a group of backend endpoints or services
+    - NEGs can be:
+        - Zonal: one ore more endpoints which can be Compute Engine VMs or services running on these VMs
+        - Internet: single endpoint hosted outside of Google Cloud
+        - Serverless: points to Cloud Run, App Engine services
+        - Hybrid connectivity: points to traffic director services running outside of GC
+
+## SSL Proxy Load Balancing
+
+- Is a global load balancing service for encrypted non HTTPS traffic
+- Terminates user SSL connection at the load balancing layer then balances the connection between the instances
+- The instances can be in multiple regions, the traffic is redirected to the closes one
+- Supports both IPv4 and IPv6
+- Provided features:
+    - Intelligent routing: can route requests to backend locations where is capacity
+    - Certificate management
+    - Security patching
+    - SSL policies
+
+## TCP Proxy Load Balancing
+
+- Is a global load balancing service for un-encrypted non HTTP traffic
+- Terminates connections at the load balancing layer and then forwards traffic to the closest backend
+- Supports both IPv4 and IPv6
+- Provided features:
+    - Intelligent routing: can route requests to backend locations where is capacity
+    - Security patching
