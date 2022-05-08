@@ -25,4 +25,6 @@
     - [Cloud Interconnect](03-elastic-cloud-infrastructure/cloud-interconnect.md)
     - [Shared VPC and VPC Peering](03-elastic-cloud-infrastructure/vpc-peering.md)
     - [Cloud Load Balancing](03-elastic-cloud-infrastructure/cloud-load-balancing.md)
+    - [Infrastructure Automation](03-elastic-cloud-infrastructure/infrastructure-automation.md)
+    - [Managed Services](03-elastic-cloud-infrastructure/managed-services.md)
 
