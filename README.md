@@ -27,4 +27,6 @@
     - [Cloud Load Balancing](03-elastic-cloud-infrastructure/cloud-load-balancing.md)
     - [Infrastructure Automation](03-elastic-cloud-infrastructure/infrastructure-automation.md)
     - [Managed Services](03-elastic-cloud-infrastructure/managed-services.md)
+4. Architecting with Google Kubernetes
+    - []()
 
