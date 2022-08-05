@@ -36,12 +36,18 @@
 
 ## Billing
 
+- Billing accounts store information about how to pay charges for resources used
 - Billing is set up at the project level, when we set up a project, a billing account is linked to it
 - Billing accounts can be linked to one or more projects
 - Projects without a billing account can only use free gcp services
 - Billing account can be charged monthly or at a set threshold
 - Subaccounts can be used for separate billing for projects
-- Budget:
+- Several roles are associated with billing. The billing roles are as follows:
+    - **Billing Account Creator**: can create new self-service billing accounts
+    - **Billing Account Administrator**: manages billing accounts but cannot create them
+    - **Billing Account User**: enables a user to link projects to billing accounts
+    - **Billing Account Viewer**: enables a user to view billing account cost and transactions
+- Budgets:
     - Budgets can be set at the project level
     - To help with project planning and controlling costs we can set a budget
     - When we exceed a budget limit, we can configure our billing account to send an alert. We can set up a webhook as well for automation

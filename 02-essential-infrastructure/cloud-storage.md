@@ -108,3 +108,9 @@
     - Single region for optimizing latency and bandwidth within a region
     - Dual-region: similar performance for both regions, high availability and geo-redundancy
     - Multi-region: distribute data globally or high availability and geo-redundancy
+
+## Uniform Bucket-Level Access
+
+- In order to support a uniform permissioning system, Cloud Storage has uniform bucket-level access
+- Using this feature on a bucket disables ACLs for all Cloud Storage resources in the bucket; access to Cloud Storage resources then is granted exclusively through IAM
+- After you enable uniform bucket-level access, you can reverse your decision for 90 days.

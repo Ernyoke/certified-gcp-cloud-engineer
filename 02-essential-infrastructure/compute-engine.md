@@ -85,8 +85,18 @@
 ## Sole-tenant Nodes
 
 - They are physical compute engine servers dedicated to host VM instances only for our VMs
-- Used for isolation or grouping instances on the same node
+- We can sole-tenant nodes to keep our VMs physically separated from VMs in other projects, or to group your VMs together on the same host hardware
 - Provides the ability to bring CPU-bound licenses to the cloud
+- A Sole-tenant node is a physical Compute Engine server that is dedicated to hosting only your project's VMs
+- The following types of workloads might benefit from using sole-tenant nodes:
+    - Gaming workloads with performance requirements
+    - Finance or healthcare workloads with security and compliance requirements
+    - Windows workloads with licensing requirements
+    - Machine learning, data processing, or image rendering workloads. For these workloads, consider reserving GPUs
+    - Workloads requiring increased input/output operations per second (IOPS) and decreased latency, or workloads that use temporary storage in the form of caches, processing space, or low-value data. For these workloads, consider reserving local SSDs
+- Node templates: 
+    - Is a regional resource that defines the properties of each node in a node group
+    - When we create a node group from a node template, the properties of the node template are immutably copied to each node in the node group
 
 ## Shielded VMs
 

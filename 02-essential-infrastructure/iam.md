@@ -153,3 +153,8 @@
     - We should establish key rotation policies and methods
     - We can audit service accounts with `serviceAccount.key.lists()` method
 - Use Identity-Aware Proxy (IAP)
+
+## Cloud Audit Logs
+
+- Google Cloud services write audit logs that record administrative activities and accesses within your Google Cloud resources
+- Cloud Audit Logs maintain three audit logs: Admin Activity logs, Data Access logs, and System Event logs
