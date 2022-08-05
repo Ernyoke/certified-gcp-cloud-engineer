@@ -103,4 +103,96 @@
 - Pods are the smallest, most basic deployable objects
 - Pods contain one or more containers. In case of multiple containers, they are managed as single entity and they share the same pod resources (shared networking, shared storage)
 - It is not recommended to create individual pods directly, instead we should create Replicas
-- Namespaces: used for management purposes, multiple projects can share rhe same cluster by using namespaces
+- Namespaces: 
+    - Used for management purposes, multiple projects can share rhe same cluster by using namespaces
+    - K8s starts with 4 initial namespaces: default, kube-system, kube-public, kube-node-lease
+- Labels:
+    - Key value pairs, which help to organize Kubernetes objects
+    - Each object can have a set of key-value objects, each label must be unique for a object
+- Pod lifecycle:
+    - Pods are ephemeral
+    - Terminated pods can not be brought back
+    - Pods do not heal or repair themselves
+    - Pods do not replace themselves
+    - Pod lifecycle states:
+        - Pending -> Running -> Succeeded
+                             -> Failed
+        - Unknown phase: can occur due to an error
+- Replica sets:
+    - Ensures that a specify number of pods running at any given time
+    - Are managed by deployments, but they can be used by themselves as well
+
+## Workloads
+
+- Objects that set deployment rules for pods
+- They let us define the rules for application scheduling, scaling and upgrading
+- Type of workloads:
+    - Deployments: run multiple replicas of an app and automatically replace any instances that fail
+    - StatefulSets: used for apps that requires persistent storage
+    - DaemonSets: ensures that every node in the cluster runs a copy of a pod
+    - Jobs: used to run a finite task until completion
+    - CronJob: similar to jobs, but run until completion on a schedule
+    - ConfigMaps: configuration info for any workload to reference
+
+## Kubernetes Services
+
+- A service is an abstraction on top of logical selection of pods
+- Provides a persistent IP address and a DNS name with which the pods can be accessed
+- Allows for routing external traffic into the cluster
+- It can used for routing inside the cluster. Can be used a load balancer for pods and for scaling these pods
+- It automatically handles the recreation of pods
+- In order for a service to route the traffic, the manifest file has to contain a name for DNS and a selector to define what pod should be included in the service
+- Routing works by forwarding the network requests to certain pods which match the specified labels
+- Service types:
+    - `ClusterIP`: default k8s service
+        - Gives a default service which can be accessed by other apps in the cluster
+        - It is not exposed outside the cluster but it can be addressed from inside the cluster
+        - It has a static IP address which can be used inside the cluster
+        - The cloud SDK of CloudShell can be used to connect to this service form the outside
+    - `NodePort`: it is a static port between 32000 - 32767
+        - The value of the port can be randomly assigned by k8s or chosen by the user
+        - The service can be accessed by `[NODE_IP]:[PORT]`
+        - The service can be accessed from outside of the cluster
+        - It is not secure since it opens up the whole cluster for outside access
+        - It is an extension of the ClusterIP type
+    - `LoadBalancer`: it is an internal k8s service which connects to a load balancer provided by the cloud provider
+        - It is an extension of the NodePort type
+        - The default method to expose a service
+    - Multi-port Services: used to expose multiple ports for a service
+    - `ExternalName`: provides an internal alias for an external DNS name
+        - It is not associated with a set of pods or a DNS name
+        - It is essentially a set of CNAME redirection
+    - Headless service type: `serviceType: None`
+        - Great use case for this is when no load balancing or routing is needed
+
+## Ingres for GKE
+
+- In GKE an ingress object defines rules for routing HTTP and HTTPS traffic to applications running in a cluster
+- An ingress object is associated with on ro more service objects
+- When we create an ingress object, GKE creates an HTTP load balancer and configures it according to the information in description
+- The load balancer is given a stable IP address
+- Ingress can be used to expose multiple services with a single load balancer
+
+## Network Endpoint Groups (NEG)
+
+- It is a config object which specifies a group of backend endpoints and services
+- NEG are useful for container-native load balancing, where each container can be represented as an endpoint to a load balancer
+- NEGs allow compute engine load balancers to communicate directly with pods
+
+## Health Checks
+
+- Default and inferred parameters are used if there are no specified health check parameters
+- Should be explicitly defined by using a Backend Config custom resource definition (CRD) for the service
+
+## SSL Certificates
+
+- There are 3 ways to provide certificates to an HTTPS load balancer:
+    - Google-managed:
+        - Completely managed by Google
+        - They do not support wildcard domains
+    - Self-managed certificates:
+        - We can provision our own certificates and create a certificate resource in the gcp project
+        - We can then list the certificate in annotation for use
+    - Self-managed as Secrets
+        - Provisioned by us
+        - We can create a secret to hold the certificate and refer this secret for use
