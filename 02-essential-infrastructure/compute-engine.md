@@ -35,7 +35,7 @@
     - Patch compliance reporting
     - Patch deployment (patch jobs which apply patches)
 
-# Charges for Stopped Instances
+## Charges for Stopped Instances
 
 - When a VM is terminated, we do not pay for CPU and memory resources
 - We are charger for attached disks a allocated IP addresses
@@ -72,7 +72,21 @@
     - Committed use (1 - 3 year, up to 60% discount)
     - Preemtible VMs
 
-# Preemtible VMs
+## Compute Engine Roles
+
+- To create Compute Engine resources in a project, users must be team members on the project or a specific resource and have appropriate permissions to perform specific tasks. Users can be associated with projects as follows:
+    - Individual users
+    - A Google group
+    - A G Suite domain
+    - A service account
+- Once a user or set of users is added to a project, we can assign permissions by granting roles to the user or set of users
+- Compute Engine predefined roles:
+    - **Compute Engine Admin Users**: with this role have full control over Compute Engine instances
+    - **Compute Engine Network Admin Users**: with this role can create, modify, and delete most networking resources, and it provides read-only access to firewall rules and SSL certifications. This role does not give the user permission to create or alter instances
+    - **Compute Engine Security Admin Users**: with this role can create, modify, and delete SSL certificates and firewall rules
+    - **Compute Engine Viewer Users**: with this role can get and list Compute Engine resources but cannot read data from those resources
+
+## Preemtible VMs
 
 - Instances, which we can create a run at a lower cost (up to 80%)
 - These VMs might be terminated at any time
