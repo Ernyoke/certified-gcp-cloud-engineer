@@ -9,3 +9,11 @@
 - The functions execute in a secure, isolated execution environment
 - Compute resources scale as needed to run as many instances of Cloud Functions as needed without you having to do anything to control scaling
 - The execution of one function is independent of all others. The lifecycles of Cloud Functions are not dependent on each other
+- By default, the functions will time out after one minute, although we can set the timeout for as long as 9 minutes
+- Cloud Function Runtimes:
+    - NodeJS
+    - Java
+    - .NET
+    - Ruby
+    - Python
+    - Go

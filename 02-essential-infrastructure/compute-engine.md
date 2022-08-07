@@ -143,7 +143,7 @@
 - Every VM comes with a single root persistent disk
 - This image is bootable. It is durable, it can survive if the VM terminates
 - There are different types of disks:
-    - Persistent disks:
+    - **Persistent disks**:
         - These are network storages appearing as block devices
         - They are attached to the VMs through the network interface
         - They are durable and bootable
@@ -160,13 +160,13 @@
             - pd-balanced
             - pd-extreme (zonal only SSD)
         - By default compute engine encrypts all data persisted on disks
-    - Local SSD:
+    - **Local SSD**:
         - They are physically attached to a VM
         - They are ephemeral
         - They offer very high IOPS number
         - We can attach at most 8 SSDs to one VM
         - Data on local SSDs can survive a restart but not a VM stop or a reset
-    - RAM disks:
+    - **RAM disks**:
         - tmpfs
         - Faster than local disks, slower than RAM memory
         - They are very volatile, data is erased at stop or start
@@ -199,3 +199,13 @@
     - Can be achieved even when a disk is attached to a running VM
     - We can increase disk size but not shrink it
 
+## Instance Groups
+
+- Instance groups are sets of VMs that are managed as a single entity
+- Any gcloud or console command applied to an instance group is applied to all members of the instance group
+- Google provides two types of instance groups: **managed** and **unmanaged**
+- Managed Instance Groups:
+    - Consist of groups of identical VMs
+    - They are created using an instance template, which is a specification of a VM configuration, including machine type, boot disk image, zone, labels, and other properties of an instance
+    - Managed instance groups can automatically scale the number of instances in a group and be used with load balancing
+- Unmanaged groups should be used only when you need to work with different configurations within different VMs within the group

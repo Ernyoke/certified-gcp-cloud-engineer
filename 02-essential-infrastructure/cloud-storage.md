@@ -9,10 +9,10 @@
 - It offers a single API across all storage classes
 - Cloud Storage is collection of buckets. Data in directories is stored as key-value pairs
 - It has 4 storage classes:
-    - Standard: hot data, most expensive storage class. It has no data retrieval cost and minimum storage time
-    - Nearline: low cost, highly durable for storing infrequently accessed data
-    - Coldline: very low cost, for storing infrequently accessed data. Require a minimum of 90 day storage of data
-    - Archive: lowest cost for data archiving, online backups and DR. Data is available in milliseconds. It has no availability SLA. It has the highest cost for data access and management, and a 365 minimum storage duration
+    - **Standard**: hot data, most expensive storage class. It has no data retrieval cost and minimum storage time
+    - **Nearline**: low cost, highly durable for storing infrequently accessed data
+    - **Coldline**: very low cost, for storing infrequently accessed data. Require a minimum of 90 day storage of data
+    - **Archive**: lowest cost for data archiving, online backups and DR. Data is available in milliseconds. It has no availability SLA. It has the highest cost for data access and management, and a 365 minimum storage duration
 - Each of these storage classes offers 3 location types:
     - Multi-region
     - Dual-region
@@ -25,6 +25,10 @@
     - Data access:
         - `gsutil` command line
         - JSON or XML APIs
+- Cloud Storage does not support concurrency and locking
+- If multiple clients are writing the same file, the lst data written to the file is persisted
+- Object storage does not provide a file system, buckets are analogous to directories, but they are not true directories with support for subdirectories
+- **Cloud Storage Fuse**: it is an open source project, which provides a way to mount a bucket as a file system on Linux and Mac
 
 ## Changing Default Storage Classes
 

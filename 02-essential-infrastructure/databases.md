@@ -87,4 +87,4 @@
 
 - It is a fully managed Redis service used for in-memory data storage
 - It automates complex tasks such as: HA, failover, patches and monitoring
-- Can support instances up ti 300 per second
+- The instance running Redis can be configured with 1GB to 300GB of memory
