@@ -1,4 +1,4 @@
-# GCP Cloud Engineer
+# GCP Associate Cloud Engineer Notes
 
 1. Introduction
     - [Introduction](01-fundamentals/introduction.md)
