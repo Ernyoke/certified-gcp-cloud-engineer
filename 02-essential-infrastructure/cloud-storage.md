@@ -117,4 +117,21 @@
 
 - In order to support a uniform permissioning system, Cloud Storage has uniform bucket-level access
 - Using this feature on a bucket disables ACLs for all Cloud Storage resources in the bucket; access to Cloud Storage resources then is granted exclusively through IAM
-- After you enable uniform bucket-level access, you can reverse your decision for 90 days.
+- After you enable uniform bucket-level access, you can reverse your decision for 90 days
+
+## Cloud Storage IAM Roles
+
+- Storage Object Creator (`roles/storage.objectCreator`):
+    - Allows users to create objects
+    - Does not give permission to view, delete, or replace objects
+- Storage Object Viewer (`roles/storage.objectViewer`):
+    - Grants access to view objects and their metadata, excluding ACLs
+    - Can also list the objects in a bucket
+- Storage Object Admin (`roles/storage.objectAdmin`):
+    - Grants full control over objects, including listing, creating, viewing, and deleting objects
+- Storage HMAC Key Admin (`roles/storage.hmacKeyAdmin`):
+    - Full control over HMAC keys in a project
+    - This role can only be applied to a project
+- Storage Admin (`roles/storage.admin`):
+    - Grants full control of buckets and objects
+    - When applied to an individual bucket, control applies only to the specified bucket and objects within the bucket
