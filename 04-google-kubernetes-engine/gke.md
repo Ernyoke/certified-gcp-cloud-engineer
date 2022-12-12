@@ -31,7 +31,7 @@
 
 - API server: all interactions with the cluster is done through API calls or kubectl
 - kube scheduler: discovers and assigns newly created pods to appropriate nodes
-- kube controller manager: runs all controller processes. It is responsible for things like noticing an responding when nodes go done, maintaining the correct number of pods, creating default account and access tokens, etc.
+- kube controller manager: runs all controller processes. It is responsible for things like noticing an responding when nodes go down, maintaining the correct number of pods, creating default account and access tokens, etc.
 - cloud controller manager: runs controllers specific to the cloud providers
 - etcd: key-value store that stores the state of the cluster
 
