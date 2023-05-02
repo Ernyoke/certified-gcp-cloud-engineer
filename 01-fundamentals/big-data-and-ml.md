@@ -7,7 +7,7 @@
     - Cloud Dataproc (managed Hadoop):
         - Is an open-source framework for big data
         - It is based on the map-reduce programming model
-        - Dataproc is a fast and easy managed way to run Hadoop, Spark, Hive and Pig on GPC
+        - Dataproc is a fast and easy managed way to run Hadoop, Spark, Hive and Pig on GCP
         - A cluster can be created in 90 seconds or less
         - We can scale up and down jobs on the fly
         - We pay only for hardware resources used during the life of the cluster (billing is done down to second)
@@ -17,7 +17,7 @@
         - It can be used for ETL, batch processing, stream processing
         - We used Dataflow to create data pipelines used for batch processing a streaming purposes
         - Orchestration: we can create pipelines that coordinate services, including external services
-        - Dataflow integrates with Cloud Storage, Pub/Sub, BigQuery and BitTable
+        - Dataflow integrates with Cloud Storage, Pub/Sub, BigQuery and BigTable
     - BigQuery:
         - Ad-hoc SQL queries on massive datasets
         - Provides near real-time interactive analysis of massive datasets
@@ -27,7 +27,7 @@
         - We only pay for storage and processing used
         - Provides automatic discount for long-term data storage (after 90 days)
     - Cloud Pub/Subs:
-        - It is ment to serve as a simple, reliable, scalable foundation for stream analytics
+        - It is meant to serve as a simple, reliable, scalable foundation for stream analytics
         - Pub: publisher, sub: subscriber
         - Receiving messages does have to synchronous
         - It is great for decoupling systems
